@@ -1,4 +1,4 @@
-public class Aluno {
+public class Aluno extends Duvidas {
   // atributos devem ser privados
   private String nome;
   private double matricula;
@@ -6,9 +6,18 @@ public class Aluno {
   private float ira_i;
   private float ira_g;
   private int semestre;
-  private String turmas[];
+  protected String duvidas[];
+
+  // construtor para senha de acesso
+  public Aluno(String senha) {
+    this.senha = senha;
+  }
 
   // definindo os setters e getters dos atributos
+  public String getSenha() {
+    return senha;
+  }
+  
   public void setNome(String nome) {
     this.nome = nome;
   }
@@ -21,13 +30,6 @@ public class Aluno {
   }
   public double getMatricula() {
     return matricula;
-  }
-
-  public void setSenha(String senha) {
-    this.senha = senha;
-  }
-  public String getSenha() {
-    return senha;
   }
 
   public void setIraI(float ira_i) {
@@ -51,6 +53,18 @@ public class Aluno {
     return semestre;
   }
 
+  public void setResposta(String resposta) {
+    this.resposta = resposta;
+  }
   
+  // sobescreve o método fazDuvida() da classe abstrata
+  public void fazDuvida() {
+    System.out.println("***Faz Dúvida***");
+  }
+
+  // implementa o método tiraDuvida() da classe abstrata
+  public String tiraDuvida() {
+    return resposta;
+  }
   
 }
