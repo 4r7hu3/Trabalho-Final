@@ -10,7 +10,7 @@ public class Disciplina {
   }
   
   // definindo os setters e getters dos atributos
-  public String getcodigo() {
+  public String getCodigo() {
     return codigo;
   }
   
@@ -19,13 +19,6 @@ public class Disciplina {
   }
   public String getNome() {
     return nome;
-  }
-
-  public void setCodigo(String codigo) {
-    this.codigo = codigo;
-  }
-  public String getCodigo() {
-    return codigo;
   }
 
   public void setSemestre(String semestre) {

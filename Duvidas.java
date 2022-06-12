@@ -9,7 +9,7 @@ public abstract class Duvidas {
     System.out.println("Dúvida");
   }
   
-  // método para Professor sanar dúvida
+  // método para Professor/Aluno sanar dúvida
   public abstract String tiraDuvida();
 
   // adiciona as dúvidas em um vetor

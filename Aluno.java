@@ -1,5 +1,5 @@
 public class Aluno extends Duvidas {
-  // atributos devem ser privados
+  // atributos devem ser privados/protegidos
   private String nome;
   private double matricula;
   private String senha;

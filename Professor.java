@@ -21,6 +21,7 @@ public class Professor extends Duvidas {
   public String getSenha() {
     return senha;
   }
+  
   public void setNome(String nome) {
     this.nome = nome;
   }
