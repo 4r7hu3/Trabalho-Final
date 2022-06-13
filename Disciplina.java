@@ -1,8 +1,9 @@
 public class Disciplina {
-  // atributos devem ser privados
+  // atributos devem ser privados/protegidos
   private String nome;
   private String codigo;
   private String semestre;
+  public Aluno alunos[] = new Aluno[60];
 
   // construtor para o código da disciplina
   public Disciplina(String codigo) {
@@ -28,5 +29,19 @@ public class Disciplina {
     return semestre;
   }
 
-  
+  // método que adiciona Aluno em turmas/disciplinas
+  public void addAluno(int i, Aluno alu) {
+   alunos[i] = alu;
+  }
+
+  // método que remove Aluno da disciplina
+  public void removeAluno(int matricula) {
+    for(int i=0; i<alunos.length; i++) {
+      if(alunos[i] != null) {
+        if(alunos[i].getMatricula() == matricula) {
+          alunos[i] = null;
+        }
+      }
+    }
+  }
 }
