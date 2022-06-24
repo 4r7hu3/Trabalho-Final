@@ -1,34 +1,10 @@
-public class Professor extends Duvidas {
+public class Professor extends Pessoa {
   // atributos devem ser privados
-  private String nome;
   private double siape;
-  private String senha;
   private int nivel;
   //private String turmas[];
-  
-  // construtor para senha de acesso
-  public Professor(String senha) {
-    this.senha = senha;
-  }
 
-  // construtor para número da dúvida e resposta
-  /*public Professor(int n, String resposta) {
-    this.nduvida = n;
-    this.resposta = resposta;
-  }*/
-  
-  // definindo os setters e getters dos atributos
-  public String getSenha() {
-    return senha;
-  }
-  
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-  public String getNome() {
-    return nome;
-  }
-
+  // métodos get e set próprios de Professor
   public void setSiape(double siape) {
     this.siape = siape;
   }
@@ -47,8 +23,8 @@ public class Professor extends Duvidas {
     this.resposta = resposta;
   }
 
-  // implementando o método tiraDuvida() da classe abstrata
-  public String tiraDuvida() {
+  // implementando o método tiraDuvida() da classe Pessoa
+  /*public String tiraDuvida() {
     return resposta;
-  }
+  }*/
 }
