@@ -2,6 +2,7 @@ public class Material {
   // atributos devem ser privados
   private Duvida duvidas[];
 
+  // métodos de CRUD
   public void addDuvida(int i, Duvida x) {
     duvidas[i] = x;
   }

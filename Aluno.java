@@ -33,9 +33,5 @@ public class Aluno extends Pessoa {
   public int getSemestre() {
     return semestre;
   }
-
-  public void setResposta(String resposta) {
-    this.resposta = resposta;
-  }
   
 }

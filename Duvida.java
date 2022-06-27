@@ -4,6 +4,7 @@ public abstract class Duvida {
   private Pessoa quemPergunta;
   private Pessoa quemResponde;
 
+  // métodos get e set
   public void setIdDuvida(int n) {
     id_duvida = n;
   }
@@ -26,6 +27,6 @@ public abstract class Duvida {
   }
   
   // método para Professor/Aluno sanar dúvida
-  public abstract String tiraDuvida();
+  //public abstract String tiraDuvida();
     
 }

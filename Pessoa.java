@@ -1,4 +1,4 @@
-public class Pessoa extends Duvida {
+public class Pessoa {
   private String nome;
   private String senha;
 
@@ -21,11 +21,15 @@ public class Pessoa extends Duvida {
     System.out.println("Aqui é feita a dúvida!");
   }
 
+  public void tiraDuvida() {
+    System.out.println("Aqui as dúvidas são tiradas!");
+  }
+
   // métodos para tirar dúvidas
-  public void setResposta(String resposta) {
+  /*public void setResposta(String resposta) {
     this.resposta = resposta;
   }
   public String tiraDuvida() {
     return resposta;
-  }
+  }*/
 }

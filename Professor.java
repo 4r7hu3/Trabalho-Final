@@ -19,10 +19,6 @@ public class Professor extends Pessoa {
     return nivel;
   }
 
-  public void setResposta(String resposta) {
-    this.resposta = resposta;
-  }
-
   // implementando o método tiraDuvida() da classe Pessoa
   /*public String tiraDuvida() {
     return resposta;

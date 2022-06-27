@@ -7,9 +7,7 @@ class Main {
     Professor pfs1 = new Professor();
     Disciplina sibd = new Disciplina("CK0084");
 
-    System.out.print("\n");
-
-    al1.setNome("Arthur");
+    al1.setNome("Pedro");
     al1.setSenha("1234@");
     pfs1.setNome("Ismayle");
     pfs1.setSenha("@5678");
@@ -22,6 +20,7 @@ class Main {
     System.out.println("Código - Disciplina: "+sibd.getCodigo());
 
     al1.fazDuvida();
+    //al1.tiraDuvida();
     pfs1.tiraDuvida();
     //al1.addDuvidas(0);
 
