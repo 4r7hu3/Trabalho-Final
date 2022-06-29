@@ -8,9 +8,13 @@ class Main {
     Disciplina sibd = new Disciplina("CK0084");
 
     al1.setNome("Pedro");
+    al1.setMatricula(123456);
     al1.setSenha("1234@");
+    al2.setMatricula(789101);
+    al2.setNome("Ana");
+    al2.setSenha("54321@");
     pfs1.setNome("Ismayle");
-    pfs1.setSenha("@5678");
+    pfs1.setSenha("@5678");    
     
     sibd.addAluno(0, al1);
     sibd.addAluno(1, al2);
@@ -19,6 +23,14 @@ class Main {
     System.out.println("Senha do professor "+pfs1.getNome() +": "+ pfs1.getSenha());
     System.out.println("Código - Disciplina: "+sibd.getCodigo());
 
+    sibd.removeAluno(789101);
+
+    for(int i=0; i<sibd.alunos.length; i++) {
+      if(sibd.alunos[i] != null) {
+        System.out.println(sibd.alunos[i].getNome());
+      }
+    }
+    
     al1.fazDuvida();
     //al1.tiraDuvida();
     pfs1.tiraDuvida();

@@ -1,6 +1,6 @@
-public abstract class Duvida {
-  public int id_duvida;
-  public String resposta;
+public class Duvida {
+  private int id_duvida;
+  private String resposta;
   private Pessoa quemPergunta;
   private Pessoa quemResponde;
 
@@ -12,6 +12,13 @@ public abstract class Duvida {
     return id_duvida;
   }
 
+  public void setResposta(String resp) {
+    resposta = resp;
+  }
+  public String getResposta() {
+    return resposta;
+  }
+  
   public void setQuemPergunta(Pessoa p) {
     p = quemPergunta;
   }
@@ -26,7 +33,5 @@ public abstract class Duvida {
     return quemResponde;
   }
   
-  // método para Professor/Aluno sanar dúvida
-  //public abstract String tiraDuvida();
     
 }

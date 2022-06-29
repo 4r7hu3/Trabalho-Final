@@ -20,7 +20,7 @@ public class Material {
   public void pesquisaDuvida(int i, int id_duvida) {
     for(i=0; i<duvidas.length; i++) {
       if(duvidas[i].getIdDuvida() == id_duvida) {
-        System.out.println(duvidas[i].resposta);
+        System.out.println(duvidas[i].getResposta());
       }
     }
   }
