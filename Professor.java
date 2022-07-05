@@ -1,8 +1,7 @@
 public class Professor extends Pessoa {
   // atributos devem ser privados
   private double siape;
-  private int nivel;
-  //private String turmas[];
+  private int nivel; // 1 = bacharel; 2 = mestre; 3 = doutor
 
   // métodos get e set próprios de Professor
   public void setSiape(double siape) {
@@ -18,9 +17,4 @@ public class Professor extends Pessoa {
   public int getNivel() {
     return nivel;
   }
-
-  // implementando o método tiraDuvida() da classe Pessoa
-  /*public String tiraDuvida() {
-    return resposta;
-  }*/
 }

@@ -4,6 +4,8 @@ public class Disciplina {
   private String codigo;
   private String semestre;
   public Aluno alunos[] = new Aluno[60];
+  private Duvida duvidas[] = new Duvida[60];
+  private Duvida respostas[] = new Duvida[60];
 
   // construtor para o código da disciplina
   public Disciplina(String codigo) {
@@ -40,6 +42,38 @@ public class Disciplina {
       if(alunos[i] != null) {
         if(alunos[i].getMatricula() == matricula) {
           alunos[i] = null;
+        }
+      }
+    }
+  }
+
+  // métodos de manipulação de dúvida
+
+  // adiciona dúvida no vetor
+  public void addDuvida(int i, Duvida x) {
+    duvidas[i] = x;
+  }
+
+  // deleta dúvida do vetor
+  public void deletaDuvida(int id_duvida) {
+    for(int i=0; i<duvidas.length; i++) {
+      if(duvidas[i] != null) {
+        if(duvidas[i].getIdDuvida() == id_duvida) {
+          duvidas[i] = null;
+        }
+      }
+    }
+  }
+  
+  // pesquisa por uma dúvida
+  public void pesquisaDuvida(int id_duvida) {
+    for(int i=0; i<duvidas.length; i++) {
+      if(duvidas[i] != null) {
+        if(duvidas[i].getIdDuvida() == id_duvida) {
+          System.out.println(duvidas[i].getDuvida());
+        }
+        else {
+          System.out.println("Id não correspondente, tente novamente!");
         }
       }
     }
