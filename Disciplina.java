@@ -5,7 +5,6 @@ public class Disciplina {
   private String semestre;
   public Aluno alunos[] = new Aluno[60];
   private Duvida duvidas[] = new Duvida[60];
-  private Duvida respostas[] = new Duvida[60];
 
   // construtor para o código da disciplina
   public Disciplina(String codigo) {

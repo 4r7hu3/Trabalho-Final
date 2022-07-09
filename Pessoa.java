@@ -23,6 +23,6 @@ public class Pessoa {
   }
 
   public void tiraDuvida() {
-    System.out.print("\nDigite a resposta: ");
+    System.out.print("Digite a resposta: ");
   }
 }
