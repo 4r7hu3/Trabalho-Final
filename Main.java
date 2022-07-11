@@ -146,7 +146,7 @@ class Main {
     catch (InputMismatchException e) {
       System.out.println("");
       System.out.println("\nEntrada INVÁLIDA!");
-      System.out.print("\nPor favor, reinicie a aplicação e tente novamente.\n");
+      System.out.println("Por favor, reinicie a aplicação e tente novamente.\n");
     }
 
     Connection conn = null;
