@@ -16,12 +16,13 @@ public class Duvida {
   public void setDuvida(String duvida) {
     this.duvida = duvida;
   }
-  public void setResposta(String resp) {
-    resposta = resp;
-  }
 
   public String getDuvida() {
     return duvida;
+  }
+  
+  public void setResposta(String resp) {
+    resposta = resp;
   }
   
   public String getResposta() {
@@ -31,13 +32,15 @@ public class Duvida {
   public void setQuemPergunta(Pessoa p) {
     p = quemPergunta;
   }
-  public void setQuemResponde(Pessoa r) {
-    r = quemResponde;
-  }
 
   public Pessoa getQuemPergunta() {
     return quemPergunta;
   }
+  
+  public void setQuemResponde(Pessoa r) {
+    r = quemResponde;
+  }
+  
   public Pessoa getQuemResponde() {
     return quemResponde;
   }

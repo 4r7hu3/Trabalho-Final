@@ -7,7 +7,7 @@ class Main {
     System.out.print("\n");
 
     Scanner sc = new Scanner(System.in);
-    Disciplina sibd = new Disciplina("CK0084");
+    Disciplina sibd = new Disciplina("CK0085");
     Aluno alu = new Aluno();
     Professor prof = new Professor();
     Duvida d0 = new Duvida();
@@ -25,12 +25,14 @@ class Main {
           int usuario = sc.nextInt();
 
           if (usuario == 0) {
+            sc.nextLine();
             System.out.print("\nNome: ");
-            alu.setNome(sc.next());
+            alu.setNome(sc.nextLine());
             System.out.print("Matrícula: ");
             alu.setMatricula(sc.nextDouble());
+            sc.nextLine();
             System.out.print("Defina uma senha: ");
-            alu.setSenha(sc.next());
+            alu.setSenha(sc.nextLine());
             System.out.print("Semestre: ");
             alu.setSemestre(sc.nextInt());
             System.out.print("IRA Individual: ");
@@ -40,16 +42,18 @@ class Main {
             System.out.print("\n");
           } 
           else if (usuario == 1) {
-            System.out.print("\nNome: ");
-            prof.setNome(sc.next());
-            System.out.print("Siape: ");
+            sc.nextLine();
+            System.out.printf("\nNome: ");
+            prof.setNome(sc.nextLine());
+            System.out.printf("Siape: ");
             prof.setSiape(sc.nextDouble());
-            System.out.print("Defina uma senha: ");
-            prof.setSenha(sc.next());
-            System.out.print("Nível: ");
+            sc.nextLine();
+            System.out.printf("Defina uma senha: ");
+            prof.setSenha(sc.nextLine());
+            System.out.printf("Nível: ");
             prof.setNivel(sc.nextInt());
-            System.out.print("\nPARABÉNS! Seu cadastro foi realizado com sucesso.");
-            System.out.print("\n");
+            System.out.printf("\nPARABÉNS! Seu cadastro foi realizado com sucesso.");
+            System.out.printf("\n");
           } 
           else {
             System.out.print("\nERRO - TENTE NOVAMENTE");
@@ -78,32 +82,51 @@ class Main {
           }
         }
         else if (opcao == 3) {
-          int id = 0;
-          int aux = 0;
-          alu.fazDuvida();
-          d0.setDuvida(sc.next());
-          d0.setIdDuvida(id);
-          sibd.addDuvida(aux, d0);
-          id++;
-          aux++;
+          if(alu.getNome() != null) {
+            sc.nextLine();
+            int id = 0;
+            int aux = 0;
+            alu.fazDuvida();
+            d0.setDuvida(sc.nextLine());
+            d0.setIdDuvida(id);
+            sibd.addDuvida(aux, d0);
+            id++;
+            aux++;
+          }
+          else {
+            System.out.print("\n********** CADASTRO NECESSÁRIO **********\n");
+          }
+          
         } 
         else if (opcao == 4) {
-          System.out.print("\nAluno(0) ou  Professor(1)? ");
-          int usuario = sc.nextInt();
+          if(d0.getDuvida() != null) {
+            System.out.print("\nSe você é aluno digite ‘0‘, se é professor, digite ‘1‘: ");
+            int usuario = sc.nextInt();
 
-          if (usuario == 0) {
-            System.out.println("\nDúvida: "+d0.getDuvida());
-            alu.tiraDuvida();
-            d0.setResposta(sc.next());
-          } 
-          else if (usuario == 1) {
-            System.out.println("\nDúvida: "+d0.getDuvida());
-            prof.tiraDuvida();
-            d0.setResposta(sc.next());
-          } 
-          else {
-            System.out.print("\nERRO - TENTE NOVAMENTE");
+            if (usuario == 0) {
+              sc.nextLine();
+              System.out.println("\nDúvida: "+d0.getDuvida());
+              alu.tiraDuvida();
+              d0.setResposta(sc.nextLine());     
+            }
+            else if (usuario == 1) {
+              if(prof.getNome() != null) {
+                sc.nextLine();
+                System.out.println("\nDúvida: "+d0.getDuvida());
+                prof.tiraDuvida();
+                d0.setResposta(sc.nextLine());
+              }
+              else {
+                System.out.print("\n********** CADASTRO NECESSÁRIO **********\n");
+              }
+            }
+            else {
+              System.out.print("\nERRO - TENTE NOVAMENTE");
+            }  
           }
+          else {
+            System.out.print("\n********** CADASTRO NECESSAŔIO **********\n");
+          }   
         } 
         else if (opcao == 5) {
           System.out.println("\nDúvida: " + d0.getDuvida());
@@ -121,6 +144,7 @@ class Main {
       }
     }
     catch (InputMismatchException e) {
+      System.out.println("");
       System.out.println("\nEntrada INVÁLIDA!");
       System.out.print("\nPor favor, reinicie a aplicação e tente novamente.\n");
     }
@@ -141,21 +165,25 @@ class Main {
       // prepStmt.executeUpdate();
   
       // PreparedStatement prepStmt2 = conn.prepareStatement("insert into Disciplina values(?, ?, ?, ?)");
-      // prepStmt2.setString(1, "CK0085");
+      // prepStmt2.setString(1, sibd.getCodigo());
       // prepStmt2.setString(2, "SIBD");
       // prepStmt2.setInt(3, 3);
       // prepStmt2.setInt(4, 50);
       // prepStmt2.executeUpdate();
-  
-      //stt.executeUpdate("insert into Professor values(122233, '@1234', 'Ismayle',
-      //2)");
-      //stt.executeUpdate("insert into Disciplina values('CK00844', 'SIBD', 3,
-      //908731)");
+
+      // PreparedStatement prepStmt3 = conn.prepareStatement("insert into Aluno values(?, ?, ?, ?, ?, ?, ?)");
+      // prepStmt3.setDouble(1, alu.getMatricula());
+      // prepStmt3.setString(2, alu.getSenha());
+      // prepStmt3.setString(3, alu.getNome());
+      // prepStmt3.setInt(6, alu.getSemestre());
+      // prepStmt3.setString(7, sibd.getCodigo());
+      // prepStmt3.executeUpdate();
       
       //stt.executeUpdate("update Disciplina set codigo = 'CK0084' where codigo = 'CK0085' ");
       
-      //stt.executeUpdate("delete from Professor where nome = 'Ismayle' ");
-      //stt.executeUpdate("delete from Professor");
+      // stt.executeUpdate("delete from Disciplina");
+      // stt.executeUpdate("delete from Professor");
+      // stt.executeUpdate("delete from Aluno");
       
       ResultSet rs = stt.executeQuery("select * from Professor");
   
@@ -176,8 +204,20 @@ class Main {
         int semestre = rs2.getInt("semestre");
         System.out.println("Código: "+codigo+"\nNome: "+nome+"\nSemestre: "+semestre);
       }
+
+      System.out.println("");
+
+      ResultSet rs3 = stt.executeQuery("select * from Aluno");
+
+      while(rs3.next()) {
+        String nome = rs3.getString("nome");
+        Double matricula = rs3.getDouble("matricula");
+        int semestre = rs3.getInt("semestre");
+        String cod_disc = rs3.getString("disciplina_fk");
+        System.out.println("Nome: "+nome+"\nMatricula: "+matricula+"\nSemestre: "+semestre+"\nDisciplina: "+cod_disc);
+      }
   
-      System.out.println("\nO banco de dados foi atualizado.");
+      // System.out.println("\nO banco de dados foi atualizado.");
       
       }
       catch(Exception e) {
@@ -186,6 +226,7 @@ class Main {
       finally {
         try {
           if(conn != null) {
+            System.out.println("\nO banco de dados foi atualizado.");
             conn.close();
           }
         }
